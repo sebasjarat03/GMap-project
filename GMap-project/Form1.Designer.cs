@@ -30,6 +30,7 @@ namespace GMap_project
         private void InitializeComponent()
         {
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.loadPoints = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // gMapControl1
@@ -40,7 +41,7 @@ namespace GMap_project
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(465, 61);
+            this.gMapControl1.Location = new System.Drawing.Point(468, 3);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 20;
             this.gMapControl1.MinZoom = 2;
@@ -54,15 +55,27 @@ namespace GMap_project
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(541, 361);
+            this.gMapControl1.Size = new System.Drawing.Size(779, 642);
             this.gMapControl1.TabIndex = 0;
-            this.gMapControl1.Zoom = 13D;
+            this.gMapControl1.Zoom = 8D;
+            this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
+            // 
+            // loadPoints
+            // 
+            this.loadPoints.Location = new System.Drawing.Point(52, 193);
+            this.loadPoints.Name = "loadPoints";
+            this.loadPoints.Size = new System.Drawing.Size(109, 44);
+            this.loadPoints.TabIndex = 1;
+            this.loadPoints.Text = "Load points";
+            this.loadPoints.UseVisualStyleBackColor = true;
+            this.loadPoints.Click += new System.EventHandler(this.loadPoints_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 514);
+            this.ClientSize = new System.Drawing.Size(1248, 657);
+            this.Controls.Add(this.loadPoints);
             this.Controls.Add(this.gMapControl1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -73,6 +86,7 @@ namespace GMap_project
         #endregion
 
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private System.Windows.Forms.Button loadPoints;
     }
 }
 

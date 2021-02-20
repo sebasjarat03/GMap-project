@@ -1,0 +1,13 @@
+C:\Users\sejat\source\repos\GMap-project\GMap-project\obj\Debug\GMap-project.csprojAssemblyReference.cache
+C:\Users\sejat\source\repos\GMap-project\GMap-project\obj\Debug\GMap_project.Form1.resources
+C:\Users\sejat\source\repos\GMap-project\GMap-project\obj\Debug\GMap_project.Properties.Resources.resources
+C:\Users\sejat\source\repos\GMap-project\GMap-project\obj\Debug\GMap-project.csproj.GenerateResource.cache
+C:\Users\sejat\source\repos\GMap-project\GMap-project\obj\Debug\GMap-project.csproj.CoreCompileInputs.cache
+C:\Users\sejat\source\repos\GMap-project\GMap-project\bin\Debug\GMap-project.exe.config
+C:\Users\sejat\source\repos\GMap-project\GMap-project\bin\Debug\GMap-project.exe
+C:\Users\sejat\source\repos\GMap-project\GMap-project\bin\Debug\GMap-project.pdb
+C:\Users\sejat\source\repos\GMap-project\GMap-project\bin\Debug\GMap.NET.Core.dll
+C:\Users\sejat\source\repos\GMap-project\GMap-project\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\sejat\source\repos\GMap-project\GMap-project\obj\Debug\GMap-project.csproj.CopyComplete
+C:\Users\sejat\source\repos\GMap-project\GMap-project\obj\Debug\GMap-project.exe
+C:\Users\sejat\source\repos\GMap-project\GMap-project\obj\Debug\GMap-project.pdb
