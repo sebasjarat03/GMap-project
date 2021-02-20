@@ -25,3 +25,4 @@ C:\Users\Juan\Documents\Visual Studio 2019\repos\gmap-project\GMap-project\obj\D
 C:\Users\Juan\Documents\Visual Studio 2019\repos\gmap-project\GMap-project\obj\Debug\GMap-project.exe
 C:\Users\Juan\Documents\Visual Studio 2019\repos\gmap-project\GMap-project\obj\Debug\GMap-project.pdb
 C:\Users\Juan\Documents\Visual Studio 2019\repos\gmap-project\GMap-project\obj\Debug\GMap_project.ui.TableWindow.resources
+C:\Users\sejat\source\repos\GMap-project\GMap-project\obj\Debug\GMap_project.ui.TableWindow.resources
