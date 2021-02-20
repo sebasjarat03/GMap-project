@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GMap_project.Model;
+using GMap_project.model;
 using GMap.NET;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.MapProviders;
+using GMap_project.ui;
 
 namespace GMap_project
 {
@@ -70,6 +71,12 @@ namespace GMap_project
                 
             }
             setMarkers();
+        }
+
+        private void openTableWindow_Click(object sender, EventArgs e)
+        {
+            TableWindow tableWindow = new TableWindow(dm.dataTable);
+            tableWindow.Show();
         }
     }
 }
