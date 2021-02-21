@@ -16,12 +16,14 @@ namespace GMap_project.ui
         private static String MUNICIPIO = "CATEGORICO";
         private static String NOMBRE_DEL_SITIO = "CADENA";
 
-        List<String> municipios = new List<string>();
-        List<String> gestores = new List<string>();
+        private List<String> municipios = new List<string>();
+        private List<String> gestores = new List<string>();
+        private DataTable data;
 
         public TableWindow(DataTable data)
-        {
+        { 
             InitializeComponent();
+            this.data = data;
             this.dataGridView1.DataSource = data;
             for (int i = 0; i < dataGridView1.ColumnCount; i++) {
                 if(i==0 || i== 2 || i == 4) {
@@ -36,13 +38,9 @@ namespace GMap_project.ui
                 municipios.Add(dataGridView1.Rows[i].Cells[2].Value.ToString());
 
             }
-            
 
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            municipios.Sort();
+            gestores.Sort();
 
         }
 
@@ -54,8 +52,7 @@ namespace GMap_project.ui
                 placeName.Visible = false;
                 parameterBox.Items.Clear();
                 var control = "";
-                
-                gestores.Sort();
+
                 for (int i = 0; i < gestores.Count; i++) {
                     String gestor = gestores[i];
                     if (!gestor.Equals(control))
@@ -72,9 +69,7 @@ namespace GMap_project.ui
                 placeName.Visible = false;
                 parameterBox.Items.Clear();
                 var control = "";
-                
 
-                municipios.Sort();
                 for (int i = 0; i < municipios.Count; i++) {
                     String municipio = municipios[i];
                     if (!municipio.Equals(control))
@@ -95,6 +90,12 @@ namespace GMap_project.ui
         {
             string filterField = fieldBox.Text;
             ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}'", filterField, parameterBox.Text);
+        }
+
+        private void placeName_TextChanged(object sender, EventArgs e)
+        {
+            string filterField = "NOMBRE DEL SITIO";
+            ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, placeName.Text);
         }
     }
 }

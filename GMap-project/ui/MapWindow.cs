@@ -75,6 +75,7 @@ namespace GMap_project
 
         private void openTableWindow_Click(object sender, EventArgs e)
         {
+            Console.WriteLine(dm.dataTable.Rows.Count);
             TableWindow tableWindow = new TableWindow(dm.dataTable);
             tableWindow.Show();
         }
