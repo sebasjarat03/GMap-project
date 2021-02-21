@@ -39,6 +39,22 @@ namespace GMap_project.model
             return coordinates;
         }
 
+        public List<String> filterCoords(String munName) {
+            List<String> coords = new List<string>();
+            var reader = new StreamReader(File.OpenRead(PATH));
+            var ignored = reader.ReadLine();
+
+            while (!reader.EndOfStream) {
+                var line = reader.ReadLine();
+                var array = line.Split(',');
+
+                if (array[2].Equals(munName)) {
+                    coords.Add(array[6] + "," + array[7]);
+                }
+            }
+            return coords;
+        }
+
         private DataTable generateDataTable(string fileName, bool firstRowContainsFieldNames = true)
         {
             DataTable result = new DataTable();

@@ -30,6 +30,7 @@ namespace GMap_project
             dm = new DataManager();
 
             points = new List<PointLatLng>();
+            fillMunicipiosBox();
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)
@@ -56,6 +57,8 @@ namespace GMap_project
 
         private void loadPoints_Click(object sender, EventArgs e)
         {
+            points.Clear();
+            markers.Clear();
             List<String> coordinates = dm.getCoordinates();
             
             foreach (String c in coordinates) {
@@ -78,6 +81,54 @@ namespace GMap_project
             Console.WriteLine(dm.dataTable.Rows.Count);
             TableWindow tableWindow = new TableWindow(dm.dataTable);
             tableWindow.Show();
+        }
+
+        private void clearMapButton_Click(object sender, EventArgs e)
+        {
+            points.Clear();
+            markers.Clear();
+        }
+
+        private void fillMunicipiosBox() {
+            DataTable data = dm.dataTable;
+            List<String> municipios = new List<string>();
+            for (int i = 0; i < data.Rows.Count; i++) {
+                municipios.Add(data.Rows[i]["MUNICIPIO"].ToString());
+            }
+            municipios.Sort();
+            var control = "";
+            for (int i = 0; i < municipios.Count; i++)
+            {
+                String municipio = municipios[i];
+                if (!municipio.Equals(control))
+                {
+                    municipiosBox.Items.Add(municipio);
+                    control = municipio;
+                }
+            }
+
+        }
+
+        private void municipiosBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            points.Clear();
+            markers.Clear();
+            List<String> filterCoords = dm.filterCoords(municipiosBox.Text);
+            foreach (String c in filterCoords)
+            {
+                String coord = c.Trim('"', '(', ')');
+
+                var arr = coord.Split(',');
+                var latt = arr[0].Replace('.', ',');
+                var lonn = arr[1].Replace('.', ',');
+                double lat = double.Parse(latt);
+                double lon = double.Parse(lonn);
+                PointLatLng p = new PointLatLng(lat, lon);
+                points.Add(p);
+
+            }
+            setMarkers();
+
         }
     }
 }

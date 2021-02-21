@@ -32,10 +32,10 @@ namespace GMap_project.ui
                 }
                 
             }
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < data.Rows.Count; i++)
             {
-                gestores.Add(dataGridView1.Rows[i].Cells[0].Value.ToString());
-                municipios.Add(dataGridView1.Rows[i].Cells[2].Value.ToString());
+                gestores.Add(data.Rows[i]["GESTOR"].ToString());
+                municipios.Add(data.Rows[i]["MUNICIPIO"].ToString());
 
             }
 
