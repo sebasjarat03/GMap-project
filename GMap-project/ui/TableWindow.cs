@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GMap_project.ui
 {
@@ -18,12 +19,10 @@ namespace GMap_project.ui
 
         private List<String> municipios = new List<string>();
         private List<String> gestores = new List<string>();
-        private DataTable data;
 
         public TableWindow(DataTable data)
         { 
             InitializeComponent();
-            this.data = data;
             this.dataGridView1.DataSource = data;
             for (int i = 0; i < dataGridView1.ColumnCount; i++) {
                 if(i==0 || i== 2 || i == 4) {
@@ -97,5 +96,7 @@ namespace GMap_project.ui
             string filterField = "NOMBRE DEL SITIO";
             ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, placeName.Text);
         }
+
+        
     }
 }

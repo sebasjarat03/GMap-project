@@ -18,7 +18,6 @@ namespace GMap_project
 {
     public partial class Form1 : Form
     {
-
         private DataManager dm;
 
         private List<PointLatLng> points;
@@ -78,7 +77,6 @@ namespace GMap_project
 
         private void openTableWindow_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(dm.dataTable.Rows.Count);
             TableWindow tableWindow = new TableWindow(dm.dataTable);
             tableWindow.Show();
         }
@@ -125,10 +123,14 @@ namespace GMap_project
                 double lon = double.Parse(lonn);
                 PointLatLng p = new PointLatLng(lat, lon);
                 points.Add(p);
-
             }
             setMarkers();
+        }
 
+        private void openChartButton_Click(object sender, EventArgs e)
+        {
+            ChartsForm charWindow = new ChartsForm(dm.dataTable);
+            charWindow.Show();
         }
     }
 }

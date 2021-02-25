@@ -53,7 +53,7 @@ namespace GMap_project.ui
             // 
             this.fieldBox.FormattingEnabled = true;
             this.fieldBox.Location = new System.Drawing.Point(662, 32);
-            this.fieldBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fieldBox.Margin = new System.Windows.Forms.Padding(2);
             this.fieldBox.Name = "fieldBox";
             this.fieldBox.Size = new System.Drawing.Size(204, 21);
             this.fieldBox.TabIndex = 1;
@@ -72,8 +72,8 @@ namespace GMap_project.ui
             // parameterBox
             // 
             this.parameterBox.FormattingEnabled = true;
-            this.parameterBox.Location = new System.Drawing.Point(664, 88);
-            this.parameterBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.parameterBox.Location = new System.Drawing.Point(662, 70);
+            this.parameterBox.Margin = new System.Windows.Forms.Padding(2);
             this.parameterBox.Name = "parameterBox";
             this.parameterBox.Size = new System.Drawing.Size(201, 21);
             this.parameterBox.TabIndex = 3;
@@ -82,8 +82,8 @@ namespace GMap_project.ui
             // 
             // placeName
             // 
-            this.placeName.Location = new System.Drawing.Point(664, 88);
-            this.placeName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.placeName.Location = new System.Drawing.Point(662, 70);
+            this.placeName.Margin = new System.Windows.Forms.Padding(2);
             this.placeName.Name = "placeName";
             this.placeName.Size = new System.Drawing.Size(191, 20);
             this.placeName.TabIndex = 4;
@@ -94,7 +94,7 @@ namespace GMap_project.ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 450);
+            this.ClientSize = new System.Drawing.Size(879, 448);
             this.Controls.Add(this.placeName);
             this.Controls.Add(this.parameterBox);
             this.Controls.Add(this.label1);
