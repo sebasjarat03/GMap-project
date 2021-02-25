@@ -78,7 +78,7 @@ namespace GMap_project
         private void openTableWindow_Click(object sender, EventArgs e)
         {
             TableWindow tableWindow = new TableWindow(dm.dataTable);
-            tableWindow.Show();
+            tableWindow.ShowDialog();
         }
 
         private void clearMapButton_Click(object sender, EventArgs e)
@@ -130,7 +130,7 @@ namespace GMap_project
         private void openChartButton_Click(object sender, EventArgs e)
         {
             ChartsForm charWindow = new ChartsForm(dm.dataTable);
-            charWindow.Show();
+            charWindow.ShowDialog();
         }
     }
 }
