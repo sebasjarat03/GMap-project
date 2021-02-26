@@ -25,6 +25,7 @@ namespace GMap_project.ui
         {
             paintBarsChart();
             paintPieChart();
+            paintPointsChart();
         }
 
         private void paintBarsChart()
@@ -59,15 +60,18 @@ namespace GMap_project.ui
 
         private void paintPointsChart()
         {
+            data.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}'", "MUNICIPIO", "Cali");
+
             var accountGroups = this.data.AsEnumerable()
-               .GroupBy(row => row.Field<String>("MUNICIPIO"))
+               .GroupBy(row => row.Field<String>("GESTOR"))
                .Select(grp => new { Account = grp.Key, Count = grp.Count() });
 
             foreach (var group in accountGroups)
             {
-                pieChart.Series[0].Points.AddXY(group.Account, group.Count);
+                pointsChart.Series[0].Points.AddXY(group.Account, group.Count);
             }
 
+            pointsChart.ChartAreas[0].AxisY.Interval = 5;
         }
     }
 }
